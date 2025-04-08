@@ -52,8 +52,14 @@ Requires: openSUSE-release
 @BCOND_KVSFS@ kvsfs
 %global use_fsal_kvsfs %{on_off_switch kvsfs}
 
+@BCOND_LIZARDFS@ lizardfs
+%global use_fsal_lizardfs %{on_off_switch lizardfs}
+
 @BCOND_RDMA@ rdma
 %global use_rdma %{on_off_switch rdma}
+
+@BCOND_NFS_RDMA@ nfs_rdma
+%global use_nfs_rdma %{on_off_switch nfs_rdma}
 
 @BCOND_9P@ 9P
 %global use_9P %{on_off_switch 9P}
@@ -555,8 +561,10 @@ cmake3 .	-DCMAKE_BUILD_TYPE=Debug			\
 	-DUSE_FSAL_GPFS=%{use_fsal_gpfs}		\
 	-DUSE_FSAL_KVSFS=%{use_fsal_kvsfs}		\
 	-DUSE_FSAL_GLUSTER=%{use_fsal_gluster}		\
+	-DUSE_FSAL_LIZARDFS=%{use_fsal_lizardfs}	\
 	-DUSE_SYSTEM_NTIRPC=%{use_system_ntirpc}	\
 	-DUSE_9P_RDMA=%{use_rdma}			\
+	-DUSE_NFS_RDMA=%{use_nfs_rdma}		\
 	-DUSE_LTTNG=%{use_lttng}			\
 	-DUSE_UNWIND=%{use_unwind}			\
 	-DUSE_ADMIN_TOOLS=%{use_utils}			\

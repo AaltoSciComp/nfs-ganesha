@@ -1623,6 +1623,12 @@ else(USE_9P)
     set(BCOND_RDMA "%bcond_with")
 endif(USE_9P)
 
+if(USE_NFS_RDMA)
+    set(BCOND_NFS_RDMA "%bcond_without")
+else(USE_NFS_RDMA)
+    set(BCOND_NFS_RDMA "%bcond_with")
+endif(USE_NFS_RDMA)
+
 if(USE_LTTNG)
     set(BCOND_LTTNG "%bcond_without")
 else(USE_LTTNG)
