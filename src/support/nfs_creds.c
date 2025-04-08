@@ -507,7 +507,7 @@ nfsstat4 nfs_req_creds(struct svc_req *req)
 				   &op_ctx->original_creds.caller_uid,
 				   &op_ctx->original_creds.caller_gid)) {
 #endif
-			LogInfo(COMPONENT_IDMAPPER,
+			LogDebug(COMPONENT_IDMAPPER,
 				"Could not map principal %s to uid", principal);
 			/* For compatibility with Linux knfsd, we set
 			 * the uid/gid to anonymous when a name->uid
