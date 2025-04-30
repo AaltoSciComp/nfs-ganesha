@@ -723,7 +723,7 @@ int nfs_set_param_from_conf(config_file_t parse_tree,
 		ds_param->domainname = nfs_param.nfsv4_param.domainname;
 	} else {
 		/* TODO: Remove below log when NFSv4/domainname is removed */
-		LogWarn(COMPONENT_INIT,
+		LogInfo(COMPONENT_INIT,
 			"Using domainname from DIRECTORY_SERVICES config section, instead of NFSv4");
 	}
 
@@ -741,7 +741,7 @@ int nfs_set_param_from_conf(config_file_t parse_tree,
 		/* TODO: Remove below log when NFS_CORE_PARAM/
 		 * manage_gids_expiration is deprecated for user validity.
 		 */
-		LogWarn(COMPONENT_INIT,
+		LogInfo(COMPONENT_INIT,
 			"Using idmapped_user_time_validity from DIRECTORY_SERVICES config section, instead of manage_gids_expiration from NFS_CORE_PARAM");
 	}
 	if (ds_param->idmapped_group_time_validity == unset_time_validity) {
@@ -753,7 +753,7 @@ int nfs_set_param_from_conf(config_file_t parse_tree,
 		/* TODO: Remove below log when NFS_CORE_PARAM/
 		 * manage_gids_expiration is deprecated for group validity.
 		 */
-		LogWarn(COMPONENT_INIT,
+		LogInfo(COMPONENT_INIT,
 			"Using idmapped_group_time_validity from DIRECTORY_SERVICES config section, instead of manage_gids_expiration from NFS_CORE_PARAM");
 	}
 
